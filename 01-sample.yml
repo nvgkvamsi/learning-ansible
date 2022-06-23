@@ -1,8 +1,9 @@
 - name: Intro to playbook
-  hosts: localhost
-  vars:
-    URL: play.example.com
+  hosts: all
   tasks:
-    - name: Print URL
+    - name: Print Hello
       ansible.builtin.debug:
-        msg: URL = {{ URL }}
+        msg: Hello
+    - name: Print Fruit
+      debug:
+        msg: apple
