@@ -54,4 +54,4 @@
       register: output
     - name: Print Output of the shell
       ansible.builtin.debug:
-        msg: "{{ output }}"
+        msg: "{{ output.stdout }}"
