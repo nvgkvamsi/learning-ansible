@@ -16,7 +16,6 @@
       ansible.builtin.debug:
         msg: URL = {{ URL }}
 
-        
 
 - name: Vars from tasks
   hosts: localhost
@@ -26,3 +25,11 @@
         msg: URL = {{ URL }}
       vars:
         URL: tasks.example.com
+
+
+- name: Vars from inventory
+  hosts: localhost
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
