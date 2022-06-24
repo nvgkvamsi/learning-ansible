@@ -44,3 +44,14 @@
     - name: Print FQDN
       ansible.builtin.debug:
         msg: "{{ ansible_fqdn }}"
+
+
+- name: Register Variables
+  hosts: localhost
+  tasks:
+    - name: Run uptime command
+      ansible.builtin.shell: uptime
+      register: output
+    - name: Print Output of the shell
+      ansible.builtin.debug:
+        msg: "{{ output }}"
